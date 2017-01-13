@@ -30,11 +30,11 @@ public class BerlinClock implements Collection<LampRow>{
 	public void setTime(String time){
 		// parse string into array of hh, mm, ss
 		String[] parsedTimeString = BerlinClock.parseTimeString(time);
-		//convert to integers
+		//convert array indices to integers
 		int hours = BerlinClock.fromStringToInt(parsedTimeString[0]);
 		int minutes = BerlinClock.fromStringToInt(parsedTimeString[1]);
 		int seconds = BerlinClock.fromStringToInt(parsedTimeString[2]);
-		//access the rows
+		//access the rows and assign them to variables
 		LampRow row1 = berlinClock.get(0);
 		LampRow row2 = berlinClock.get(1);
 		LampRow row3 = berlinClock.get(2);
@@ -49,7 +49,11 @@ public class BerlinClock implements Collection<LampRow>{
 	}
 
 	public void display(){
-		System.out.println("hello");
+		// loops thru each LampRow to print row colors
+		for(int i=0; i<5; i++){
+			String rowColors = berlinClock.get(i).createLampRowString();
+			System.out.println(rowColors);
+		}
 	}
 	
 	@Override

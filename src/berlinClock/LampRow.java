@@ -16,6 +16,17 @@ public abstract class LampRow implements Collection<Lamp> {
 		
 	}
 	
+	public String createLampRowString(){
+		// consolidate all the LampColors & lamp.toString() it for each LampRow
+		String lampColors = "";
+		
+		for(int i=0; i<lamps.size(); i++){
+			lampColors += lamps.get(i).toString();
+		}
+		
+		return lampColors;
+	}
+	
 	public void setColors(ArrayList<LampColor> lampColors){
 	
 	}

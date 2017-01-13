@@ -1,7 +1,5 @@
 package berlinClock;
 
-import java.util.ArrayList;
-
 public class SingleLampRow extends LampRow {
 	
 	
